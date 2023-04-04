@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseURL: 'https://us-east-1.aws.data.mongodb-api.com/app/task-manager-vhrcj/endpoint'
 };
 
 /*
