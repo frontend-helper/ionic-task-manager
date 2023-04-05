@@ -2,5 +2,10 @@
 	"appId": "io.ionic.starter",
 	"appName": "task-manager",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+	"plugins": {
+		"CapacitorHttp": {
+		  "enabled": true
+		}
+	}
 }

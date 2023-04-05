@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@capacitor-community/http';
+import { CapacitorHttp } from '@capacitor/core';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class HttpService {
       url: url,
     };
   
-    const response = await Http.get(options);
+    const response = await CapacitorHttp.get(options);
     return response.data;
   }
 
@@ -22,7 +22,7 @@ export class HttpService {
       url: url,
     };
   
-    const response = await Http.del(options);
+    const response = await CapacitorHttp.delete(options);
     return response.data;
   }
 
@@ -30,10 +30,11 @@ export class HttpService {
   async doPost(url: string, data: any) {
     const options = {
       url: url,
-      data: data
+      data: data,
+      headers: { 'Content-Type': 'application/json' },
     };
   
-    const response = await Http.post(options);
+    const response = await CapacitorHttp.post(options);
     return response.data;
   }
 }
